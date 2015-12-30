@@ -1,6 +1,7 @@
 #include "Map.h"
 
 Map::Map()
+	// Change the values when using tiles other than 30x30
 	: tileWidth(30)
 	, tileHeight(30)
 {
@@ -20,14 +21,17 @@ Map::Map()
 void Map::draw(sf::RenderWindow &window)
 {
 	// This is the map (20x20 tiles)
+	// Change when needed
 	const int mapRows = 20;
 	const int mapColumns = 20;
 
 	/*
-		-	0	=	pink path
-		-	1	=	stone wall
-		-	2	=	wooden box
-		-	3	=	grass
+	The codes with their corresponding tiles
+
+		- 0	=	pink path
+		- 1	=	stone wall
+		- 2	=	wooden box
+		- 3	=	grass
 	*/
 
 	int map[mapRows][mapColumns] =
@@ -63,6 +67,7 @@ void Map::draw(sf::RenderWindow &window)
 		// Loop through the columns
 		for (int column = 0; column < mapColumns; column++)
 		{
+			// Add / remove cases when tiles are added / removed
 			switch (map[row][column])
 			{
 			case 0:
@@ -91,6 +96,10 @@ void Map::draw(sf::RenderWindow &window)
 	}
 }
 
+// Check the SFML documentation about intrect if you do not know what is going on here
+// Add / remove some when needed (if you use less or more tiles in the texture)
+// The value of 30 is the width / height of a tile
+// Change if the tiles should be bigger / smaller
 void Map::initIntRect()
 {
 	grass.left = 0;
