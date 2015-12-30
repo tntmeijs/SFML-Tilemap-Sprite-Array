@@ -22,3 +22,6 @@ If you are able to use vertex arrays, please use those instead of sprites! They 
 
 # Instrucions
 Take a look at the source code for the instrucions. It is really easy!
+
+Please note: this features no collision detection, nor reading from external files!
+These functions can be added easily.
